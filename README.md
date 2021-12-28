@@ -1,11 +1,9 @@
 # terraform-module-template
 Template for Terraform modules
 
-<!-- Uncomment and replace with your module name
-[![lint](https://github.com/flaconi/<MODULENAME>/workflows/lint/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Alint)
-[![test](https://github.com/flaconi/<MODULENAME>/workflows/test/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Atest)
-[![Tag](https://img.shields.io/github/tag/flaconi/<MODULENAME>.svg)](https://github.com/flaconi/<MODULENAME>/releases)
--->
+[![lint](https://github.com/flaconi/terraform-github-membership/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-github-membership/actions?query=workflow%3Alint)
+[![test](https://github.com/flaconi/terraform-github-membership/workflows/test/badge.svg)](https://github.com/flaconi/terraform-github-membership/actions?query=workflow%3Atest)
+[![Tag](https://img.shields.io/github/tag/flaconi/terraform-github-membership.svg)](https://github.com/flaconi/terraform-github-membership/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <!-- TFDOCS_HEADER_START -->
