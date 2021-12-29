@@ -1,5 +1,5 @@
-# terraform-module-template
-Template for Terraform modules
+# terraform-github-membership
+Terraform module to manage users in github organization
 
 [![lint](https://github.com/flaconi/terraform-github-membership/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-github-membership/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-github-membership/workflows/test/badge.svg)](https://github.com/flaconi/terraform-github-membership/actions?query=workflow%3Atest)
@@ -39,15 +39,7 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### <a name="input_create"></a> [create](#input\_create)
-
-Description: Whether to create Github membership for users
-
-Type: `bool`
-
-Default: `true`
-
-### <a name="input_github_token"></a> [github\_token](#input\_github\_token)
+### <a name="input_token"></a> [token](#input\_token)
 
 Description: Github token to use when adding membership
 
@@ -55,7 +47,7 @@ Type: `string`
 
 Default: `""`
 
-### <a name="input_github_owner"></a> [github\_owner](#input\_github\_owner)
+### <a name="input_owner"></a> [owner](#input\_owner)
 
 Description: Github organization name
 
@@ -73,7 +65,6 @@ Type:
 list(object({
     name   = string
     github = string
-    note   = string
   }))
 ```
 
@@ -89,7 +80,6 @@ Type:
 list(object({
     name   = string
     github = string
-    note   = string
   }))
 ```
 
@@ -102,8 +92,7 @@ Default: `[]`
 
 | Name | Description |
 |------|-------------|
-| <a name="output_admins"></a> [admins](#output\_admins) | List of organization admins |
-| <a name="output_members"></a> [members](#output\_members) | List of organization members |
+| <a name="output_memberships"></a> [memberships](#output\_memberships) | A map of members and admins keyed by username. |
 
 <!-- TFDOCS_OUTPUTS_END -->
 

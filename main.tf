@@ -1,16 +1,14 @@
 locals {
-  admins  = toset([for user in var.admins : user.github])
-  members = toset([for user in var.members : user.github])
+  admins  = { for user in var.admins : lower(user.github) => "admin" }
+  members = { for user in var.members : lower(user.github) => "member" }
+  names   = { for user in concat(var.admins, var.members) : lower(user.github) => user.name }
+
+  memberships = merge(local.admins, local.members)
 }
 
-resource "github_membership" "admins" {
-  for_each = local.admins
-  username = each.value
-  role     = "admin"
-}
+resource "github_membership" "membership" {
+  for_each = local.memberships
 
-resource "github_membership" "members" {
-  for_each = local.members
-  username = each.value
-  role     = "member"
+  username = each.key
+  role     = each.value
 }
