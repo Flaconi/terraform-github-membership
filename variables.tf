@@ -1,16 +1,10 @@
-variable "create" {
-  description = "Whether to create Github membership for users"
-  type        = bool
-  default     = true
-}
-
-variable "github_token" {
+variable "token" {
   description = "Github token to use when adding membership"
   type        = string
   default     = ""
 }
 
-variable "github_owner" {
+variable "owner" {
   description = "Github organization name"
   type        = string
   default     = ""
@@ -21,7 +15,6 @@ variable "admins" {
   type = list(object({
     name   = string
     github = string
-    note   = string
   }))
   default = []
 }
@@ -31,7 +24,6 @@ variable "members" {
   type = list(object({
     name   = string
     github = string
-    note   = string
   }))
   default = []
 }
