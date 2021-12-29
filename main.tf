@@ -1,6 +1,6 @@
 locals {
-  admins = toset([ for user in var.admins : user.github ])
-  members = toset([ for user in var.members : user.github ])
+  admins  = toset([for user in var.admins : user.github])
+  members = toset([for user in var.members : user.github])
 }
 
 resource "github_membership" "admins" {
