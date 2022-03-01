@@ -1,7 +1,20 @@
+variable "token" {
+  description = "Github token"
+  type        = string
+}
+
+variable "org" {
+  description = "Github organization"
+  type        = string
+}
+
+provider "github" {
+  token = var.token
+  owner = var.org
+}
+
 module "members" {
   source = "../../"
-
-  owner = "test-organization"
 
   admins = [
     {
