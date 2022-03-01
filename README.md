@@ -17,7 +17,7 @@ Terraform module to manage users in github organization
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 4.8 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -27,7 +27,7 @@ Terraform module to manage users in github organization
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.8 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.20 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -39,22 +39,6 @@ No required inputs.
 ## Optional Inputs
 
 The following input variables are optional (have default values):
-
-### <a name="input_token"></a> [token](#input\_token)
-
-Description: Github token to use when adding membership
-
-Type: `string`
-
-Default: `""`
-
-### <a name="input_owner"></a> [owner](#input\_owner)
-
-Description: Github organization name
-
-Type: `string`
-
-Default: `""`
 
 ### <a name="input_admins"></a> [admins](#input\_admins)
 

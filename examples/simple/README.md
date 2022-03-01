@@ -3,7 +3,10 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.20 |
 
 ## Providers
 
@@ -21,7 +24,10 @@ No resources.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_token"></a> [token](#input\_token) | Github token | `string` | n/a | yes |
+| <a name="input_org"></a> [org](#input\_org) | Github organization | `string` | n/a | yes |
 
 ## Outputs
 
