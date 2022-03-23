@@ -12,7 +12,9 @@ Members
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
 
 ## Modules
 
