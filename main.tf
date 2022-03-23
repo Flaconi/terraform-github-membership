@@ -4,6 +4,26 @@ locals {
   names   = { for user in concat(var.admins, var.members) : lower(user.github) => user.name }
 
   memberships = merge(local.admins, local.members)
+
+  # List all distinct team names
+  teams = distinct(flatten([for user in merge(var.admins, var.members) :
+  [for team in user["teams"] : team["team"]] if user["teams"] != null]))
+
+  # List of all team memberships
+  teams_membership = flatten([for user in merge(var.admins, var.members) :
+    [for team in user["teams"] : {
+      user = user["github"]
+      team = team["team"]
+      role = team["role"] != null ? team["role"] : "member"
+  }] if user["teams"] != null])
+
+  # Iterate over team names to create list of member for each team
+  teams_members = { for team in local.teams :
+    team => [for member in local.teams_membership : {
+      user = member["user"]
+      role = member["role"]
+    } if member["user"] == team]
+  }
 }
 
 resource "github_membership" "membership" {
@@ -11,4 +31,13 @@ resource "github_membership" "membership" {
 
   username = each.key
   role     = each.value
+}
+
+module "teams" {
+  source = "modules/team"
+
+  for_each = local.teams
+
+  team_id = data.github_team.this[each.key].id
+  members = each.value
 }

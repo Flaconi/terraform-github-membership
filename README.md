@@ -7,6 +7,12 @@ Terraform module to manage users in github organization
 [![Terraform](https://img.shields.io/badge/Terraform--registry-github--membership-brightgreen.svg)](https://registry.terraform.io/modules/Flaconi/membership/github/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Important notice
+
+:warning: This module uses experimental optional attributes.
+
+More about it [here](https://www.terraform.io/language/expressions/type-constraints#experimental-optional-object-type-attributes).
+
 <!-- TFDOCS_HEADER_START -->
 
 
@@ -50,6 +56,10 @@ Type:
 list(object({
     name   = string
     github = string
+    teams  = optional(list(object({
+      team = string
+      role = optional(string)
+    })))
   }))
 ```
 
@@ -65,6 +75,10 @@ Type:
 list(object({
     name   = string
     github = string
+    teams  = optional(list(object({
+      team = string
+      role = optional(string)
+    })))
   }))
 ```
 

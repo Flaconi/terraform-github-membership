@@ -3,6 +3,10 @@ variable "admins" {
   type = list(object({
     name   = string
     github = string
+    teams = optional(list(object({
+      team = string
+      role = optional(string)
+    })))
   }))
   default = []
 }
@@ -12,6 +16,10 @@ variable "members" {
   type = list(object({
     name   = string
     github = string
+    teams = optional(list(object({
+      team = string
+      role = optional(string)
+    })))
   }))
   default = []
 }
