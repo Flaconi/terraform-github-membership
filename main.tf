@@ -6,9 +6,9 @@ resource "github_membership" "membership" {
 }
 
 module "teams" {
-  source = "modules/team"
+  source = "./modules/team"
 
-  for_each = local.teams
+  for_each = local.teams_members
 
   team_id = data.github_team.this[each.key].id
   members = each.value

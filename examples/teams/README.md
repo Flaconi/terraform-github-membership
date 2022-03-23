@@ -22,7 +22,9 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [github_team.developers](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team) | resource |
 
 ## Inputs
 

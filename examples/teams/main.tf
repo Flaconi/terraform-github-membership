@@ -25,31 +25,24 @@ resource "github_team" "developers" {
 module "members" {
   source = "../../"
 
-  admins = [
-    {
-      name   = "Admin"
-      github = "test-admin"
-    }
-  ]
-
   members = [
     {
       name   = "Some User"
       github = "test-user-1"
-      teams  = [
-        { team = "developers" }
+      teams = [
+        { team = "repository-developers", role = "maintainer" }
       ]
     },
     {
       name   = "Another User"
       github = "test-user-2"
-      teams  = [
-        { team = "developers", role = "maintainer" }
+      teams = [
+        { team = "repository-developers" } # Default role "member"
       ]
     },
   ]
 
-  depends_on = [ github_team.developers ]
+  depends_on = [github_team.developers]
 }
 
 output "memberships" {
