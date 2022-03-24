@@ -29,16 +29,12 @@ module "members" {
     {
       name   = "Some User"
       github = "test-user-1"
-      teams = [
-        { team = "repository-developers", role = "maintainer" }
-      ]
+      teams  = { repository-developers = "maintainer" }
     },
     {
       name   = "Another User"
       github = "test-user-2"
-      teams = [
-        { team = "repository-developers" } # Default role "member"
-      ]
+      teams  = { repository-developers = "member" }
     },
   ]
 
