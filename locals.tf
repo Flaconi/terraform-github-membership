@@ -7,14 +7,14 @@ locals {
 
   # List all distinct team names
   teams = toset(distinct(flatten([for user in concat(var.admins, var.members) :
-  [for team in user["teams"] : team["team"]] if user["teams"] != null])))
+  keys(user["teams"]) if user["teams"] != null])))
 
   # List of all team memberships
   teams_membership = flatten([for user in concat(var.admins, var.members) :
-    [for team in user["teams"] : {
+    [for team, role in user["teams"] : {
       user = user["github"]
-      team = team["team"]
-      role = team["role"] != null ? team["role"] : "member"
+      team = team
+      role = role
   }] if user["teams"] != null])
 
   # Iterate over team names to create list of members for each team
