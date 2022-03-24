@@ -56,10 +56,7 @@ Type:
 list(object({
     name   = string
     github = string
-    teams = optional(list(object({
-      team = string
-      role = optional(string)
-    })))
+    teams  = optional(map(string))
   }))
 ```
 
@@ -75,10 +72,7 @@ Type:
 list(object({
     name   = string
     github = string
-    teams = optional(list(object({
-      team = string
-      role = optional(string)
-    })))
+    teams  = optional(map(string))
   }))
 ```
 
