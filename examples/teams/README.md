@@ -40,5 +40,6 @@ Members
 | Name | Description |
 |------|-------------|
 | <a name="output_memberships"></a> [memberships](#output\_memberships) | A map of members and admins keyed by username. |
+| <a name="output_teams"></a> [teams](#output\_teams) | A map of teams with members and corresponding roles. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
