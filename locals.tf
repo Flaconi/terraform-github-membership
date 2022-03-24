@@ -17,7 +17,7 @@ locals {
       role = team["role"] != null ? team["role"] : "member"
   }] if user["teams"] != null])
 
-  # Iterate over team names to create list of member for each team
+  # Iterate over team names to create list of members for each team
   teams_members = { for team in local.teams :
     team => [for member in local.teams_membership : {
       name = member["user"]
