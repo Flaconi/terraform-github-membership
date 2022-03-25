@@ -7,3 +7,12 @@ output "memberships" {
     }
   }
 }
+
+output "teams" {
+  description = "A map of teams with members and corresponding roles."
+  value = {
+    for name, team in module.teams : name => {
+      for user, member in team.members : user => member.role
+    }
+  }
+}

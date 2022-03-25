@@ -45,3 +45,8 @@ output "memberships" {
   description = "A map of members and admins keyed by username."
   value       = module.members.memberships
 }
+
+output "teams" {
+  description = "A map of teams with members and corresponding roles."
+  value       = module.members.teams
+}
