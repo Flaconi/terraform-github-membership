@@ -78,6 +78,14 @@ list(object({
 
 Default: `[]`
 
+### <a name="input_team_ids"></a> [team\_ids](#input\_team\_ids)
+
+Description: A dictionary for team IDs to avoid additional calls to GitHub API
+
+Type: `map(string)`
+
+Default: `{}`
+
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
