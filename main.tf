@@ -10,6 +10,6 @@ module "teams" {
 
   for_each = local.teams_members
 
-  team_id = data.github_team.this[each.key].id
+  team_id = try(data.github_team.this[each.key].id, var.team_ids[each.key])
   members = each.value
 }

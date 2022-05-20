@@ -31,3 +31,9 @@ variable "members" {
     error_message = "Only team roles `maintainer` or `member` are accepted."
   }
 }
+
+variable "team_ids" {
+  description = "A dictionary for team IDs to avoid additional calls to GitHub API"
+  type        = map(string)
+  default     = {}
+}
