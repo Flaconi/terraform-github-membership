@@ -3,14 +3,15 @@ locals {
   members = { for user in var.members : lower(user.github) => "member" }
   names   = { for user in concat(var.admins, var.members) : lower(user.github) => user.name }
 
+  all_users   = concat(var.admins, var.members)
   memberships = merge(local.admins, local.members)
 
   # List all distinct team names
-  teams = toset(distinct(flatten([for user in concat(var.admins, var.members) :
+  teams = toset(distinct(flatten([for user in local.all_users :
   keys(user["teams"]) if user["teams"] != null])))
 
   # List of all team memberships
-  teams_membership = flatten([for user in concat(var.admins, var.members) :
+  teams_membership = flatten([for user in local.all_users :
     [for team, role in user["teams"] : {
       user = user["github"]
       team = team
