@@ -11,7 +11,7 @@ TF_MODULES  = $(sort $(dir $(wildcard $(CURRENT_DIR)modules/*/)))
 # -------------------------------------------------------------------------------------------------
 # Container versions
 # -------------------------------------------------------------------------------------------------
-TF_VERSION      = 1.1.9
+TF_VERSION      = 1.2.9
 TFDOCS_VERSION  = 0.16.0-0.31
 FL_VERSION      = 0.4
 JL_VERSION      = 1.6.0-0.5
@@ -77,13 +77,18 @@ test: _pull-tf
 		echo "------------------------------------------------------------"; \
 		echo "# Terraform init"; \
 		echo "------------------------------------------------------------"; \
-		if docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
-			init \
-				-lock=false \
-				-upgrade \
-				-reconfigure \
-				-input=false \
-				-get=true; \
+		if docker run $$(tty -s && echo "-it" || echo) --rm \
+			--network=host \
+			-v "$(CURRENT_DIR):/t" \
+			--workdir "$${DOCKER_PATH}" \
+			hashicorp/terraform:$(TF_VERSION) \
+				init \
+			  	-compact-warnings \
+					-lock=false \
+					-upgrade \
+					-reconfigure \
+					-input=false \
+					-get=true; \
 		then \
 			echo "OK"; \
 		else \

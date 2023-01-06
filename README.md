@@ -23,7 +23,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 5.13 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -33,7 +33,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.20 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 5.13 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
