@@ -7,8 +7,7 @@ locals {
   memberships = merge(local.admins, local.members)
 
   # List all distinct team names
-  teams = toset(distinct(flatten([for user in local.all_users :
-  keys(user["teams"]) if user["teams"] != null])))
+  teams = toset(distinct(flatten([for user in local.all_users : keys(user["teams"])])))
 
   # Teams without IDs
   teams_without_ids = toset([for team in local.teams : team if lookup(var.team_ids, team, null) == null])
@@ -19,7 +18,7 @@ locals {
       user = user["github"]
       team = team
       role = role
-  }] if user["teams"] != null])
+  }]])
 
   # Iterate over team names to create list of members for each team
   teams_members = { for team in local.teams :
