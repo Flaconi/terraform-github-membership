@@ -3,13 +3,13 @@ variable "admins" {
   type = list(object({
     name   = string
     github = string
-    teams  = optional(map(string))
+    teams  = optional(map(string), {})
   }))
   default = []
 
   validation {
     condition = length(var.admins) > 0 ? alltrue(flatten([for m in var.admins :
-      (m["teams"] != null ? [for r in values(m["teams"]) : (r == "maintainer" || r == "member")] : [true])
+      [for r in values(m["teams"]) : (r == "maintainer" || r == "member")]
     ])) : true
     error_message = "Only team roles `maintainer` or `member` are accepted."
   }
@@ -20,13 +20,13 @@ variable "members" {
   type = list(object({
     name   = string
     github = string
-    teams  = optional(map(string))
+    teams  = optional(map(string), {})
   }))
   default = []
 
   validation {
     condition = length(var.members) > 0 ? alltrue(flatten([for m in var.members :
-      (m["teams"] != null ? [for r in values(m["teams"]) : (r == "maintainer" || r == "member")] : [true])
+      [for r in values(m["teams"]) : (r == "maintainer" || r == "member")]
     ])) : true
     error_message = "Only team roles `maintainer` or `member` are accepted."
   }
