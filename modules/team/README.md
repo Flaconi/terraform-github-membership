@@ -6,13 +6,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 5.13 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 5.13 |
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.2 |
 
 ## Modules
 

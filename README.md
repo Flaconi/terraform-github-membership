@@ -7,12 +7,6 @@ Terraform module to manage users in github organization
 [![Terraform](https://img.shields.io/badge/Terraform--registry-github--membership-brightgreen.svg)](https://registry.terraform.io/modules/Flaconi/membership/github/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Important notice
-
-:warning: This module uses experimental optional attributes.
-
-More about it [here](https://www.terraform.io/language/expressions/type-constraints#experimental-optional-object-type-attributes).
-
 <!-- TFDOCS_HEADER_START -->
 
 
@@ -23,7 +17,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 5.13 |
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.2 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -33,7 +27,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 5.13 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.2 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
