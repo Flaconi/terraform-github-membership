@@ -28,7 +28,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_team_id"></a> [team\_id](#input\_team\_id) | GitHub team ID | `number` | n/a | yes |
+| <a name="input_team_id"></a> [team\_id](#input\_team\_id) | GitHub team ID | `string` | n/a | yes |
 | <a name="input_members"></a> [members](#input\_members) | GitHub team members with roles | <pre>list(object({<br>    name = string<br>    role = string # GitHub team members role (member or maintainer)<br>  }))</pre> | `[]` | no |
 
 ## Outputs
