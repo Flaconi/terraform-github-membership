@@ -17,7 +17,7 @@ Terraform module to manage users in github organization
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.2 |
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.2, <=6.7.1 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -27,7 +27,7 @@ Terraform module to manage users in github organization
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.2 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.2, <=6.7.1 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
