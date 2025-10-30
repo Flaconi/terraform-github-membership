@@ -1,6 +1,6 @@
 variable "team_id" {
   description = "GitHub team ID"
-  type        = number
+  type        = string
 }
 
 variable "members" {
