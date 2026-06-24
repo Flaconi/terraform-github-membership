@@ -18,8 +18,6 @@ resource "github_team" "developers" {
   name        = "Repository Developers"
   description = "Developers for this repository"
   privacy     = "closed"
-
-  create_default_maintainer = false
 }
 
 module "members" {
